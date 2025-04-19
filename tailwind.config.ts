@@ -36,6 +36,10 @@ export default {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
@@ -51,6 +55,14 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				blockchain: {
+					blue: '#3b82f6',
+					darkBlue: '#1e40af',
+					lightBlue: '#93c5fd',
+					gray: '#64748b',
+					darkGray: '#334155',
+					lightGray: '#f1f5f9',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
