@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import PageLayout from '@/components/layout/PageLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -67,8 +66,7 @@ const Settings = () => {
     setAutoConnect(checked);
     localStorage.setItem('autoConnect', String(checked));
     toast({
-      title: "Setting saved",
-      description: `Auto-connect ${checked ? 'enabled' : 'disabled'}`,
+      description: `Auto-connect ${checked ? 'enabled' : 'disabled'}`
     });
   };
   
@@ -85,8 +83,7 @@ const Settings = () => {
     }
     
     toast({
-      title: "Setting saved",
-      description: `Dark mode ${checked ? 'enabled' : 'disabled'}`,
+      description: `Dark mode ${checked ? 'enabled' : 'disabled'}`
     });
   };
   
@@ -95,8 +92,7 @@ const Settings = () => {
     setNotifications(checked);
     localStorage.setItem('notifications', String(checked));
     toast({
-      title: "Setting saved",
-      description: `Notifications ${checked ? 'enabled' : 'disabled'}`,
+      description: `Notifications ${checked ? 'enabled' : 'disabled'}`
     });
   };
   
@@ -105,8 +101,7 @@ const Settings = () => {
     setAnalytics(checked);
     localStorage.setItem('analytics', String(checked));
     toast({
-      title: "Setting saved",
-      description: `Analytics ${checked ? 'enabled' : 'disabled'}`,
+      description: `Analytics ${checked ? 'enabled' : 'disabled'}`
     });
   };
   
@@ -114,9 +109,8 @@ const Settings = () => {
   const saveSettings = () => {
     // All settings are already saved individually when toggled
     toast({
-      title: "Settings saved",
       description: "All your preferences have been saved",
-      icon: <Check className="h-4 w-4" />,
+      icon: <Check className="h-4 w-4" />
     });
   };
   

@@ -58,15 +58,13 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
       // User disconnected their wallet
       disconnectWallet();
       toast({
-        title: "Wallet disconnected",
-        description: "You've disconnected your wallet.",
+        description: "You've disconnected your wallet."
       });
     } else if (accounts[0] !== web3State.account) {
       // Account changed, update state
       updateAccount(accounts[0]);
       toast({
-        title: "Account changed",
-        description: `Connected to ${formatAddress(accounts[0])}`,
+        description: `Connected to ${formatAddress(accounts[0])}`
       });
     }
   };
@@ -155,9 +153,7 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
       const { ethereum } = window;
       if (!ethereum) {
         toast({
-          variant: "destructive",
-          title: "Wallet not found",
-          description: "MetaMask is not installed. Please install it to use this app.",
+          description: "MetaMask is not installed. Please install it to use this app."
         });
         
         setWeb3State({
@@ -190,15 +186,12 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
       localStorage.setItem('walletConnected', 'true');
       
       toast({
-        title: "Wallet connected",
-        description: `Connected to ${formatAddress(account)}`,
+        description: `Connected to ${formatAddress(account)}`
       });
     } catch (error) {
       console.error("Failed to connect wallet:", error);
       toast({
-        variant: "destructive",
-        title: "Connection failed",
-        description: "Failed to connect wallet.",
+        description: "Failed to connect wallet."
       });
       
       setWeb3State({
@@ -213,8 +206,7 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
     setWeb3State(initialWeb3State);
     localStorage.removeItem('walletConnected');
     toast({
-      title: "Wallet disconnected",
-      description: "Your wallet has been disconnected.",
+      description: "Your wallet has been disconnected."
     });
   };
   
@@ -235,22 +227,17 @@ export const Web3Provider = ({ children }: { children: ReactNode }) => {
         });
         
         toast({
-          title: "Network changed",
-          description: `Switched to ${getNetworkName(chainId)}`,
+          description: `Switched to ${getNetworkName(chainId)}`
         });
       } catch (switchError: any) {
         // If the network isn't added to MetaMask, we need to add it
         if (switchError.code === 4902) {
           toast({
-            variant: "destructive",
-            title: "Network not available",
-            description: "This network needs to be added to your wallet first.",
+            description: "This network needs to be added to your wallet first."
           });
         } else {
           toast({
-            variant: "destructive",
-            title: "Network switch failed",
-            description: "Failed to switch network.",
+            description: "Failed to switch network."
           });
         }
       }
